@@ -1,0 +1,240 @@
+{
+  "nav": {
+    "services": "Dịch vụ",
+    "whyUs": "Tại sao chọn chúng tôi",
+    "platform": "Nền tảng",
+    "about": "Giới thiệu",
+    "blog": "Blog",
+    "legal": "Pháp lý",
+    "getStarted": "Bắt đầu",
+    "toggleTheme": "Chuyển giao diện"
+  },
+  "hero": {
+    "badge": "✨ Tương lai trên Đám mây",
+    "title": "XYLENTIS",
+    "subtitle": "Cloud VPS hiệu suất cao và máy chủ chuyên dụng với bảo mật và",
+    "typewriter": ["độ tin cậy.", "khả năng mở rộng.", "hiệu suất.", "đổi mới."],
+    "cta": "Bắt đầu",
+    "consultation": "Yêu cầu tư vấn",
+    "performance": "Hiệu suất",
+    "realTime": "Thời gian thực",
+    "serverStatus": "Trạng thái máy chủ",
+    "usEast": "US-East",
+    "euWest": "EU-West",
+    "apSouth": "AP-South",
+    "stats": {
+      "uptime": "99.9%",
+      "uptimeLabel": "SLA Uptime",
+      "regions": "50+",
+      "regionsLabel": "Khu vực toàn cầu",
+      "latency": "10ms",
+      "latencyLabel": "Độ trễ trung bình",
+      "support": "24/7",
+      "supportLabel": "Hỗ trợ chuyên gia"
+    }
+  },
+  "services": {
+    "kicker": "CHÚNG TÔI CUNG CẤP",
+    "title": "Dịch vụ của chúng tôi",
+    "subtitle": "Giải pháp đám mây toàn diện và dịch vụ số được thiết kế để thúc đẩy tăng trưởng doanh nghiệp",
+    "items": {
+      "vps": {
+        "title": "Cloud VPS",
+        "desc": "VPS hiệu suất cao với NVMe SSD và triển khai tức thì."
+      },
+      "dedicated": {
+        "title": "VDS / Máy chủ riêng",
+        "desc": "Máy chủ bare metal doanh nghiệp với quyền root đầy đủ, uptime 99.9%."
+      },
+      "cloud": {
+        "title": "Cloud Server",
+        "desc": "Máy chủ đám mây linh hoạt, mở rộng theo yêu cầu với chi phí tối ưu."
+      },
+      "antiDdos": {
+        "title": "Chống DDoS",
+        "desc": "Bảo vệ DDoS doanh nghiệp, chặn tấn công lên đến 1Tbps+."
+      },
+      "backup": {
+        "title": "Cloud Backup",
+        "desc": "Sao lưu tự động, khôi phục nhanh, bảo vệ dữ liệu 24/7."
+      },
+      "cdn": {
+        "title": "CDN",
+        "desc": "Mạng phân phối nội dung toàn cầu, tăng tốc website đáng kể."
+      },
+      "outsourcing": {
+        "title": "Gia công phần mềm",
+        "desc": "Phát triển ứng dụng web và mobile tùy chỉnh cho doanh nghiệp."
+      },
+      "seo": {
+        "title": "SEO & Marketing",
+        "desc": "Chiến lược SEO và marketing số cho tăng trưởng doanh nghiệp."
+      }
+    }
+  },
+  "whyUs": {
+    "kicker": "TẠI SAO CHỌN CHÚNG TÔI",
+    "title": "Tại sao Xylentis?",
+    "subtitle": "Chúng tôi kết hợp công nghệ tiên tiến với dịch vụ xuất sắc để cung cấp giải pháp đám mây thúc đẩy thành công của bạn. Hạ tầng được xây dựng cho hiệu suất, độ tin cậy và khả năng mở rộng.",
+    "items": {
+      "performance": {
+        "title": "Hạ tầng hiệu suất cao",
+        "desc": "Phần cứng tiên tiến với bộ xử lý AMD EPYC và Intel Xeon mới nhất, lưu trữ NVMe và bộ nhớ DDR5 cho hiệu suất vượt trội."
+      },
+      "uptime": {
+        "title": "Cam kết Uptime 99.9%",
+        "desc": "SLA hàng đầu ngành với hệ thống điện, mạng và làm mát dự phòng. Ứng dụng của bạn luôn hoạt động."
+      },
+      "security": {
+        "title": "Bảo mật & Chống DDoS",
+        "desc": "Bảo mật cấp doanh nghiệp với giảm thiểu DDoS tích hợp, tường lửa và phát hiện mối đe dọa tự động để bảo vệ dữ liệu."
+      },
+      "support": {
+        "title": "Đội ngũ kỹ sư chuyên gia",
+        "desc": "Hỗ trợ 24/7 từ kỹ sư được chứng nhận với chuyên môn sâu về hạ tầng đám mây, DevOps và quản trị hệ thống."
+      }
+    }
+  },
+  "platform": {
+    "kicker": "TỔNG QUAN NỀN TẢNG",
+    "title": "Bảng điều khiển mạnh mẽ",
+    "subtitle": "Quản lý toàn bộ hạ tầng từ một bảng điều khiển trực quan duy nhất",
+    "dashboardUrl": "dashboard.xylentis.com",
+    "serverHealth": "Sức khỏe máy chủ",
+    "allSystems": "Tất cả hệ thống hoạt động bình thường",
+    "cpuUsage": "Sử dụng CPU",
+    "memory": "Bộ nhớ",
+    "storage": "Lưu trữ",
+    "quickActions": "Thao tác nhanh",
+    "instances": "Phiên bản",
+    "database": "Cơ sở dữ liệu",
+    "network": "Mạng",
+    "networkTraffic": "Lưu lượng mạng",
+    "last24h": "24 giờ qua",
+    "inbound": "Đến",
+    "outbound": "Đi",
+    "globalRegions": "Khu vực toàn cầu"
+  },
+  "trusted": {
+    "kicker": "ĐƯỢC TIN TƯỞNG BỞI CÁC ĐƠN VỊ HÀNG ĐẦU",
+    "stats": {
+      "uptime": "99.9",
+      "uptimeUnit": "%",
+      "uptimeLabel": "Cam kết Uptime",
+      "projects": "500",
+      "projectsUnit": "+",
+      "projectsLabel": "Dự án đã triển khai",
+      "clients": "200",
+      "clientsUnit": "+",
+      "clientsLabel": "Khách hàng đang sử dụng",
+      "supportHours": "24",
+      "supportUnit": "/7",
+      "supportLabel": "Hỗ trợ sẵn sàng"
+    },
+    "badges": {
+      "soc2": "Chứng nhận SOC 2",
+      "iso": "ISO 27001",
+      "gdpr": "Tuân thủ GDPR",
+      "pci": "PCI DSS"
+    }
+  },
+  "faq": {
+    "kicker": "CÂU HỎI THƯỜNG GẶP",
+    "title": "Câu hỏi thường gặp",
+    "subtitle": "Tìm câu trả lời cho các câu hỏi phổ biến về dịch vụ và hạ tầng của chúng tôi",
+    "items": [
+      {
+        "q": "Cam kết uptime của bạn là gì?",
+        "a": "Chúng tôi cam kết SLA uptime 99.9% cho tất cả máy chủ chuyên dụng và VPS hosting. Điều này tương đương với ít hơn 52 phút downtime mỗi năm. Hạ tầng có nguồn điện dự phòng, kết nối mạng và hệ thống làm mát để đảm bảo khả dụng tối đa."
+      },
+      {
+        "q": "Bạn chấp nhận phương thức thanh toán nào?",
+        "a": "Chúng tôi chấp nhận tất cả thẻ tín dụng và ghi nợ chính (Visa, Mastercard, American Express), PayPal, chuyển khoản ngân hàng và thanh toán tiền điện tử bao gồm Bitcoin và Ethereum."
+      },
+      {
+        "q": "Bạn cung cấp hỗ trợ gì?",
+        "a": "Chúng tôi cung cấp hỗ trợ kỹ thuật 24/7/365 qua nhiều kênh bao gồm chat trực tiếp, email và điện thoại. Đội ngũ gồm các kỹ sư được chứng nhận với chuyên môn sâu về hạ tầng đám mây."
+      },
+      {
+        "q": "Bạn có hỗ trợ di chuyển máy chủ không?",
+        "a": "Có! Chúng tôi hỗ trợ di chuyển máy chủ miễn phí cho tất cả khách hàng mới. Đội ngũ chuyên gia sẽ xử lý toàn bộ quá trình di chuyển không có downtime."
+      },
+      {
+        "q": "Chính sách hoàn tiền là gì?",
+        "a": "Chúng tôi cam kết hoàn tiền trong 30 ngày cho tất cả các gói hosting. Nếu bạn không hài lòng, chúng tôi sẽ hoàn tiền đầy đủ, không hỏi lý do."
+      },
+      {
+        "q": "Tôi có thể nâng cấp hoặc hạ cấp máy chủ không?",
+        "a": "Hoàn toàn có thể! Bạn có thể nâng cấp hoặc hạ cấp tài nguyên máy chủ bất cứ lúc nào thông qua bảng điều khiển. Thay đổi có hiệu lực trong vài phút."
+      }
+    ],
+    "stillHaveQuestions": "Vẫn còn câu hỏi? Chúng tôi sẵn sàng hỗ trợ.",
+    "talkToSales": "Liên hệ tư vấn"
+  },
+  "contact": {
+    "kicker": "Liên hệ",
+    "title": "Nói chuyện với chúng tôi",
+    "subtitle": "Có câu hỏi hoặc cần giải pháp tùy chỉnh? Chúng tôi rất muốn nghe từ bạn.",
+    "fullName": "Họ và tên",
+    "email": "Địa chỉ Email",
+    "company": "Công ty",
+    "subject": "Chủ đề",
+    "message": "Nội dung",
+    "send": "Gửi tin nhắn",
+    "selectSubject": "Chọn chủ đề",
+    "subjects": {
+      "general": "Câu hỏi chung",
+      "sales": "Bán hàng & Báo giá",
+      "support": "Hỗ trợ kỹ thuật",
+      "partnership": "Hợp tác",
+      "careers": "Tuyển dụng"
+    },
+    "emailValue": "contact@xylentis.com",
+    "address": "TP. Hồ Chí Minh, Việt Nam",
+    "businessHours": "Giờ làm việc",
+    "supportAvailable": "Hỗ trợ 24/7",
+    "quickResponse": "Thời gian phản hồi nhanh",
+    "quickResponseDesc": "Đội ngũ thường phản hồi trong 2-4 giờ trong giờ làm việc.",
+    "teamOnline": "Đội ngũ đang trực tuyến",
+    "followUs": "Theo dõi chúng tôi"
+  },
+  "cta": {
+    "kicker": "Bắt đầu hành trình ngay hôm nay",
+    "title": "Sẵn sàng chuyển đổi hạ tầng?",
+    "subtitle": "Tham gia hàng nghìn doanh nghiệp tin tưởng Xylentis cho hạ tầng đám mây. Bắt đầu với giải pháp cấp doanh nghiệp ngay hôm nay.",
+    "getStarted": "Bắt đầu miễn phí",
+    "talkToSales": "Liên hệ tư vấn",
+    "note": "Không cần thẻ tín dụng • Gói miễn phí • Hủy bất cứ lúc nào"
+  },
+  "footer": {
+    "companyName": "Công ty Xylentis.",
+    "taxCode": "Mã số thuế",
+    "taxValue": "0319293456",
+    "address": "Địa chỉ",
+    "products": "Sản phẩm",
+    "vps": "VPS Hosting",
+    "dedicated": "Máy chủ riêng",
+    "colocation": "Colocation",
+    "antiDdos": "Chống DDoS",
+    "solutions": "Giải pháp",
+    "outsourcing": "Gia công phần mềm",
+    "webDesign": "Thiết kế Web/App",
+    "licenses": "Bản quyền phần mềm",
+    "company": "Công ty",
+    "about": "Giới thiệu",
+    "careers": "Tuyển dụng",
+    "hiring": "Đang tuyển",
+    "blog": "Blog",
+    "contactLink": "Liên hệ",
+    "legalTitle": "Pháp lý",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "sla": "SLA",
+    "refund": "Chính sách hoàn tiền",
+    "security": "Bảo mật",
+    "viewAll": "Xem tất cả chính sách",
+    "copyright": "© 2026 Xylentis. Đã đăng ký bản quyền.",
+    "sitemap": "Sơ đồ trang",
+    "allSystems": "Tất cả hệ thống hoạt động bình thường"
+  }
+}

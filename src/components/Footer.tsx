@@ -1,43 +1,209 @@
+import { Facebook, Send } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+
+const XylentisLogo = () => (
+  <svg viewBox="0 0 40 40" className="h-8 w-8" aria-hidden="true">
+    <defs>
+      <linearGradient id="footer-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#2563eb" />
+        <stop offset="100%" stopColor="#3b82f6" />
+      </linearGradient>
+    </defs>
+    <circle cx="20" cy="20" r="18" fill="url(#footer-logo-grad)" opacity="0.1" />
+    <path
+      d="M12 12L20 28L28 12"
+      stroke="url(#footer-logo-grad)"
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8 20H32"
+      stroke="url(#footer-logo-grad)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      opacity="0.6"
+    />
+    <circle cx="20" cy="8" r="2" fill="#3b82f6" />
+  </svg>
+)
+
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const { t } = useTranslation()
 
   return (
-    <footer className="mt-20 border-t border-[var(--line)] px-4 pb-14 pt-10 text-[var(--sea-ink-soft)]">
-      <div className="page-wrap flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-        <p className="m-0 text-sm">
-          &copy; {year} Your name here. All rights reserved.
-        </p>
-        <p className="island-kicker m-0">Built with TanStack Start</p>
-      </div>
-      <div className="mt-4 flex justify-center gap-4">
-        <a
-          href="https://x.com/tan_stack"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-        >
-          <span className="sr-only">Follow TanStack on X</span>
-          <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-            <path
-              fill="currentColor"
-              d="M12.6 1h2.2L10 6.48 15.64 15h-4.41L7.78 9.82 3.23 15H1l5.14-5.84L.72 1h4.52l3.12 4.73L12.6 1zm-.77 12.67h1.22L4.57 2.26H3.26l8.57 11.41z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://github.com/TanStack"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-        >
-          <span className="sr-only">Go to TanStack GitHub</span>
-          <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-            <path
-              fill="currentColor"
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-            />
-          </svg>
-        </a>
+    <footer className="mt-20 border-t border-[var(--line)] bg-[var(--header-bg)] px-4 pb-8 pt-12 backdrop-blur-lg">
+      <div className="page-wrap">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          {/* Brand column */}
+          <div className="lg:col-span-1">
+            <div className="mb-4 flex items-center gap-2">
+              <XylentisLogo />
+              <span className="text-lg font-bold tracking-tight text-[var(--sea-ink)]">
+                XYLENTIS
+              </span>
+            </div>
+            <p className="mb-1 text-sm text-[var(--sea-ink-soft)]">
+              {t('footer.companyName')}
+            </p>
+            <p className="mb-3 text-xs text-[var(--sea-ink-soft)]">
+              {t('footer.taxCode')}: {t('footer.taxValue')}
+            </p>
+            <a
+              href="mailto:contact@xylentis.com"
+              className="text-sm text-[var(--lagoon-deep)] no-underline hover:text-[var(--lagoon)]"
+            >
+              contact@xylentis.com
+            </a>
+            <div className="mt-4 flex gap-2">
+              <a
+                href="https://www.facebook.com/vnxylentis"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://t.me/xylentis"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+                aria-label="Telegram"
+              >
+                <Send className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h4 className="mb-3 text-sm font-semibold text-[var(--sea-ink)]">
+              {t('footer.products')}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: '/services/vps', label: t('footer.vps') },
+                { href: '/services/dedicated', label: t('footer.dedicated') },
+                { href: '/services/colocation', label: t('footer.colocation') },
+                { href: '/services/anti-ddos', label: t('footer.antiDdos') },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[var(--sea-ink-soft)] no-underline transition hover:text-[var(--sea-ink)]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h4 className="mb-3 text-sm font-semibold text-[var(--sea-ink)]">
+              {t('footer.solutions')}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: '/services/outsource', label: t('footer.outsourcing') },
+                { href: '/services/web-design', label: t('footer.webDesign') },
+                { href: '/services/software-license', label: t('footer.licenses') },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[var(--sea-ink-soft)] no-underline transition hover:text-[var(--sea-ink)]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="mb-3 text-sm font-semibold text-[var(--sea-ink)]">
+              {t('footer.company')}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: '/about', label: t('footer.about') },
+                { href: '/#contact', label: t('footer.careers'), badge: t('footer.hiring') },
+                { href: '/blog', label: t('footer.blog') },
+                { href: '/contact', label: t('footer.contactLink') },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 text-[var(--sea-ink-soft)] no-underline transition hover:text-[var(--sea-ink)]"
+                  >
+                    {item.label}
+                    {'badge' in item && item.badge && (
+                      <span className=" bg-[var(--brand-600)] px-1.5 py-0.5 text-[10px] font-bold text-white">
+                        {item.badge}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="mb-3 text-sm font-semibold text-[var(--sea-ink)]">
+              {t('footer.legalTitle')}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: '/legal/terms', label: t('footer.terms') },
+                { href: '/legal/privacy', label: t('footer.privacy') },
+                { href: '/legal/sla', label: t('footer.sla') },
+                { href: '/legal/refund', label: t('footer.refund') },
+                { href: '/legal/security', label: t('footer.security') },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[var(--sea-ink-soft)] no-underline transition hover:text-[var(--sea-ink)]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="/legal"
+                  className="text-[var(--lagoon-deep)] no-underline transition hover:text-[var(--lagoon)]"
+                >
+                  {t('footer.viewAll')} →
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[var(--line)] pt-6 text-xs text-[var(--sea-ink-soft)] sm:flex-row">
+          <p className="m-0">{t('footer.copyright')}</p>
+          <div className="flex items-center gap-4">
+            <a
+              href="/sitemap.xml"
+              className="text-[var(--sea-ink-soft)] no-underline hover:text-[var(--sea-ink)]"
+            >
+              {t('footer.sitemap')}
+            </a>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-2 w-2  bg-green-500" />
+              {t('footer.allSystems')}
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   )
