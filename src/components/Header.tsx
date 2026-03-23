@@ -1,13 +1,12 @@
 import XylentisLogo from '#/icons/XylentisLogo'
-import { Link } from '@tanstack/react-router'
 import { ChevronDown, Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { motion } from 'motion/react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useLanguageStore } from '../stores/language-store'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle'
 import { Button } from './ui/button'
-
-
 
 const serviceLinks = [
   { to: '/services/vps', labelKey: 'Cloud VPS' },
@@ -21,19 +20,38 @@ const serviceLinks = [
 
 export default function Header() {
   const { t } = useTranslation()
+  const { language } = useLanguageStore()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll() // check initial position
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Compute locale-aware hrefs:
+  // EN = clean paths (/,  /about), VI = prefixed (/vi/, /vi/about)
+  const homeHref = language === 'en' ? '/' : `/${language}/`
+  const aboutHref = language === 'en' ? '/about' : `/${language}/about`
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-xl">
+    <motion.header
+      className={`sticky top-0 z-50 px-4 transition-all duration-200 ${scrolled
+        ? 'border-b border-[var(--line)] bg-[var(--header-bg)] backdrop-blur-xl'
+        : 'bg-transparent'
+        }`}
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 50, delay: 0.3 }}
+    >
       <nav className="page-wrap flex items-center justify-between py-3">
         {/* Logo */}
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-[var(--sea-ink)] no-underline"
-        >
+        <a href={homeHref} className="inline-flex items-center gap-2 text-[var(--sea-ink)] no-underline">
           <XylentisLogo />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-1 text-sm font-medium lg:flex">
@@ -71,9 +89,9 @@ export default function Header() {
           <a href="#showcase" className="nav-link px-3 py-2">
             {t('nav.platform')}
           </a>
-          <Link to="/about" className="nav-link px-3 py-2">
+          <a href={aboutHref} className="nav-link px-3 py-2">
             {t('nav.about')}
-          </Link>
+          </a>
           <a href="/blog" className="nav-link px-3 py-2">
             {t('nav.blog')}
           </a>
@@ -90,13 +108,12 @@ export default function Header() {
             asChild
             type="button"
             variant="default"
-            className='px-5 py-2.5'
+            className="px-5 py-2.5"
           >
             <a
               href="https://portal.xylentis.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className='text-white'
             >
               {t('nav.getStarted')}
             </a>
@@ -133,16 +150,13 @@ export default function Header() {
             <a href="#showcase" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
               {t('nav.platform')}
             </a>
-            <Link to="/about" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
+            <a href={aboutHref} className="nav-link py-2" onClick={() => setMobileOpen(false)}>
               {t('nav.about')}
-            </Link>
+            </a>
             <a href="/blog" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
               {t('nav.blog')}
             </a>
-            <Button
-              asChild
-              className="btn-primary mt-2 justify-center"
-            >
+            <Button asChild className="mt-2 justify-center rounded-full">
               <a
                 href="https://portal.xylentis.com/"
                 target="_blank"
@@ -154,6 +168,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   )
 }

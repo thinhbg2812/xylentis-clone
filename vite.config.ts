@@ -12,7 +12,17 @@ const config = defineConfig({
     devtools(),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        autoSubfolderIndex: true,
+      },
+      pages: [
+        { path: '/vi', prerender: { enabled: true } },
+        { path: '/vi/about', prerender: { enabled: true } },
+      ],
+    }),
     viteReact(),
   ],
 })

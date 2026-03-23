@@ -1,13 +1,13 @@
-import { ArrowRight, Activity } from 'lucide-react'
+import { Activity, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Button } from '../ui/button'
 import StatCounter from '../StatCounter'
+import { Button } from '../ui/button'
 
 export default function BannerSection() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative overflow-hidden px-4 pb-16 pt-12 sm:pt-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-12 sm:pt-20">
       {/* Background decorations */}
       <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96  bg-[radial-gradient(circle,rgba(59,130,246,0.15),transparent_60%)]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96  bg-[radial-gradient(circle,rgba(37,99,235,0.1),transparent_60%)]" />
@@ -53,14 +53,14 @@ export default function BannerSection() {
           <p className="rise-in mb-4 inline-block  border border-[var(--chip-line)] bg-[var(--chip-bg)] px-4 py-1.5 text-xs font-medium text-[var(--lagoon-deep)]">
             {t('hero.badge')}
           </p>
-          <h1 className="rise-in mb-4 text-5xl font-extrabold tracking-tight sm:text-7xl" style={{ animationDelay: '100ms' }}>
+          <h1 className=" mb-4 text-5xl font-extrabold tracking-tight sm:text-7xl" >
             <span className="gradient-text">{t('hero.title')}</span>
           </h1>
-          <p className="rise-in mb-8 text-lg text-[var(--sea-ink-soft)] sm:text-xl" style={{ animationDelay: '200ms' }}>
+          <p className="mb-8 text-lg text-[var(--sea-ink-soft)] sm:text-xl" >
             {t('hero.subtitle')}{' '}
             <span className="font-semibold text-[var(--sea-ink)]">reliability.</span>
           </p>
-          <div className="rise-in flex flex-wrap items-center justify-center gap-3" style={{ animationDelay: '300ms' }}>
+          <div className="flex flex-wrap items-center justify-center gap-3" >
             <Button asChild size="lg" className="rounded-full px-6">
               <a href="https://portal.xylentis.com/" target="_blank" rel="noopener noreferrer">
                 {t('hero.cta')}
