@@ -14,7 +14,7 @@ export default function WhyUsSection() {
   const { t } = useTranslation()
 
   return (
-    <section id="why-us" className="px-4 py-16">
+    <section id="why-us" className="flex min-h-[90vh] items-center px-4 py-16">
       <div className="page-wrap">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="island-kicker mb-2">{t('whyUs.kicker')}</p>

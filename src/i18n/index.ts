@@ -1,33 +1,29 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
 
 import en from './locales/en.json'
 import vi from './locales/vi.json'
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: { translation: en },
-      vi: { translation: vi },
-    },
-    fallbackLng: 'en',
-    supportedLngs: ['en', 'vi'],
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ['querystring', 'navigator'],
-      lookupQuerystring: 'lang',
-      caches: [],
-      convertDetectedLanguage: (lng: string) => {
-        // Map full locale codes like "en-US" to supported "en"
-        const base = lng.split('-')[0]
-        return ['en', 'vi'].includes(base) ? base : 'en'
-      },
-    },
-  })
+// Detect language from URL path synchronously — before React renders
+function detectLangFromPath(): string {
+  if (typeof window !== 'undefined') {
+    const firstSegment = window.location.pathname.split('/')[1]
+    if (firstSegment === 'vi') return 'vi'
+  }
+  return 'en'
+}
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    vi: { translation: vi },
+  },
+  lng: detectLangFromPath(),
+  fallbackLng: 'en',
+  supportedLngs: ['en', 'vi'],
+  interpolation: {
+    escapeValue: false,
+  },
+})
 
 export default i18n

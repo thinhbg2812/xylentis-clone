@@ -19,7 +19,7 @@ export default function ServicesSection() {
   const { t } = useTranslation()
 
   return (
-    <section id="services" className="px-4 py-16">
+    <section id="services" className="flex min-h-[90vh] items-center px-4 py-16">
       <div className="page-wrap">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="island-kicker mb-2">{t('services.kicker')}</p>
