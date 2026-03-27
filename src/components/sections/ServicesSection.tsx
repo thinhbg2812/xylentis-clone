@@ -18,9 +18,9 @@ export default function ServicesSection() {
   const { t } = useTranslation()
 
   return (
-    <section id="services" className="relative py-32 overflow-hidden bg-slate-50 dark:bg-transparent px-4">
+    <section id="services" className="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#020617] px-4">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/50 dark:via-slate-950/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/50 dark:via-[#020617]/80 to-transparent" />
 
       <div className="page-wrap relative z-10">
         {/* Heading */}
