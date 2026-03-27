@@ -7,6 +7,14 @@ import { useLanguageStore } from '../stores/language-store'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle'
 import { Button } from './ui/button'
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from './ui/drawer'
 
 const serviceLinks = [
   { to: '/services/vps', labelKey: 'Cloud VPS' },
@@ -45,7 +53,7 @@ export default function Header() {
         }`}
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 50, delay: 0.3 }}
+      transition={{ type: "tween", ease: "linear", duration: 0.3, delay: 0.3 }}
     >
       <nav className="page-wrap flex items-center justify-between py-3">
         {/* Logo */}
@@ -100,8 +108,8 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-2">
+        {/* Right Actions — desktop only */}
+        <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
           <LanguageSwitcher />
           <Button
@@ -118,56 +126,72 @@ export default function Header() {
               {t('nav.getStarted')}
             </a>
           </Button>
+        </div>
 
-          {/* Mobile toggle */}
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] lg:hidden"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
+        {/* Mobile: ThemeToggle + hamburger */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
+          <Drawer direction="right" open={mobileOpen} onOpenChange={setMobileOpen}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileOpen(true)}
+              className="text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)]"
+              aria-label="Toggle menu"
+            >
               <Menu className="h-5 w-5" />
-            )}
-          </Button>
+            </Button>
+            <DrawerContent>
+              <DrawerHeader className="flex flex-row items-center justify-between">
+                <DrawerTitle>{t('nav.services')}</DrawerTitle>
+                <DrawerClose asChild>
+                  <Button variant="ghost" size="icon">
+                    <X className="h-5 w-5" />
+                  </Button>
+                </DrawerClose>
+              </DrawerHeader>
+
+              <nav className="flex flex-1 flex-col px-4 text-sm font-medium">
+                {[
+                  { href: '#services', label: t('nav.services') },
+                  { href: '#why-us', label: t('nav.whyUs') },
+                  { href: '#showcase', label: t('nav.platform') },
+                  { href: aboutHref, label: t('nav.about') },
+                  { href: '/blog', label: t('nav.blog') },
+                ].map((link, i) => (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    className="nav-link border-b border-[var(--line)] py-3"
+                    onClick={() => setMobileOpen(false)}
+                    initial={{ x: 40, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.05 * i, duration: 0.25, ease: 'easeOut' }}
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+              </nav>
+
+              <DrawerFooter className="border-t border-[var(--line)]">
+                <div className="flex justify-center gap-2">
+                  <LanguageSwitcher />
+                </div>
+                <Button asChild variant="default" className="justify-center">
+                  <a
+                    href="https://portal.xylentis.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('nav.getStarted')}
+                  </a>
+                </Button>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
         </div>
       </nav>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="border-t border-[var(--line)] pb-4 lg:hidden">
-          <div className="page-wrap flex flex-col gap-1 pt-3 text-sm font-medium">
-            <a href="#services" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
-              {t('nav.services')}
-            </a>
-            <a href="#why-us" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
-              {t('nav.whyUs')}
-            </a>
-            <a href="#showcase" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
-              {t('nav.platform')}
-            </a>
-            <a href={aboutHref} className="nav-link py-2" onClick={() => setMobileOpen(false)}>
-              {t('nav.about')}
-            </a>
-            <a href="/blog" className="nav-link py-2" onClick={() => setMobileOpen(false)}>
-              {t('nav.blog')}
-            </a>
-            <Button asChild className="mt-2 justify-center rounded-full">
-              <a
-                href="https://portal.xylentis.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('nav.getStarted')}
-              </a>
-            </Button>
-          </div>
-        </div>
-      )}
     </motion.header>
   )
 }

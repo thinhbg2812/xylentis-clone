@@ -4,21 +4,14 @@ import { initReactI18next } from 'react-i18next'
 import en from './locales/en.json'
 import vi from './locales/vi.json'
 
-// Detect language from URL path synchronously — before React renders
-function detectLangFromPath(): string {
-  if (typeof window !== 'undefined') {
-    const firstSegment = window.location.pathname.split('/')[1]
-    if (firstSegment === 'vi') return 'vi'
-  }
-  return 'en'
-}
-
+// Default to 'en' — the correct language is set by route beforeLoad
+// on both server and client before any component renders.
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     vi: { translation: vi },
   },
-  lng: detectLangFromPath(),
+  lng: 'en',
   fallbackLng: 'en',
   supportedLngs: ['en', 'vi'],
   interpolation: {

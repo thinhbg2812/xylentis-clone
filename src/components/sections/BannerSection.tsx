@@ -1,5 +1,9 @@
+import CloudBadge from '#/icons/CloudBadge'
+import { cn } from '#/lib/utils'
 import { Activity, ArrowRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { TypeAnimation } from 'react-type-animation'
 import StatCounter from '../StatCounter'
 import { Button } from '../ui/button'
 
@@ -49,25 +53,40 @@ export default function BannerSection() {
         </div>
 
         {/* Title */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="rise-in mb-4 inline-block  border border-[var(--chip-line)] bg-[var(--chip-bg)] px-4 py-1.5 text-xs font-medium text-[var(--lagoon-deep)]">
-            {t('hero.badge')}
-          </p>
-          <h1 className=" mb-4 text-5xl font-extrabold tracking-tight sm:text-7xl" >
-            <span className="gradient-text">{t('hero.title')}</span>
-          </h1>
-          <p className="mb-8 text-lg text-[var(--sea-ink-soft)] sm:text-xl" >
-            {t('hero.subtitle')}{' '}
-            <span className="font-semibold text-[var(--sea-ink)]">reliability.</span>
+        <div className="mx-auto max-w-4xl text-center ">
+          <div className={"relative "}>
+            <h1 className={cn(
+              'text-6xl md:text-7xl lg:text-8xl xl:text-9xl  tracking-tighter bg-gradient-to-r from-brand-600 via-ocean-500 to-brand-500 dark:from-brand-400 dark:via-ocean-400 dark:to-neon-cyan bg-clip-text text-transparent w-fit mx-auto',
+              "mb-4 font-extrabold  sm:text-7xl",
+              "gradient-text")}>{t('hero.title')}</h1>
+            <div className="absolute -top-16 right-0 md:right-20 md:-top-10 lg:-top-12 ">
+              <motion.div
+                className=""
+                animate={{ y: [0, -8, 0, 6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <CloudBadge text={t('hero.badge')} />
+              </motion.div>
+            </div>
+          </div>
+          <p className="mb-8 text-2xl md:text-3xl lg:text-4xl font-medium mb-8 mx-auto " >
+            <TypeAnimation
+              sequence={[t('hero.subtitle'), 3000, '']}
+              wrapper="span"
+              speed={40}
+              deletionSpeed={50}
+              repeat={Infinity}
+              className="font-semibold text-[var(--sea-ink)]"
+            />
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3" >
-            <Button asChild size="lg" className="rounded-full px-6">
+            <Button asChild size="xl" variant="default" className="px-5 py-2.5">
               <a href="https://portal.xylentis.com/" target="_blank" rel="noopener noreferrer">
                 {t('hero.cta')}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-6">
+            <Button size="xl" variant="outline" className="px-5 py-2.5">
               {t('hero.consultation')}
             </Button>
           </div>
