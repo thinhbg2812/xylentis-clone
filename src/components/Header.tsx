@@ -49,13 +49,13 @@ export default function Header() {
     <motion.header
       className={`sticky top-0 z-50 px-4 transition-all duration-200 ${scrolled
         ? 'border-b border-[var(--line)] bg-[var(--header-bg)] backdrop-blur-xl'
-        : 'bg-transparent'
+        : 'dark:bg-[#020617]'
         }`}
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "tween", ease: "linear", duration: 0.3, delay: 0.3 }}
     >
-      <nav className="page-wrap flex items-center justify-between py-3">
+      <nav className="page-wrap flex items-center justify-between py-3 ">
         {/* Logo */}
         <a href={homeHref} className="inline-flex items-center gap-2 text-[var(--sea-ink)] no-underline">
           <XylentisLogo />

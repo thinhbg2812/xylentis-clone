@@ -11,10 +11,10 @@ export default function BannerSection() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-12 sm:pt-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-12 sm:pt-20 dark:bg-[#020617]">
       {/* Background decorations */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96  bg-[radial-gradient(circle,rgba(59,130,246,0.15),transparent_60%)]" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96  bg-[radial-gradient(circle,rgba(37,99,235,0.1),transparent_60%)]" />
+      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96  bg-[radial-gradient(circle,rgba(59,130,246,0.15),transparent_60%)] dark:bg-[radial-gradient(circle,rgba(59,130,246,0.06),transparent_60%)]" />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96  bg-[radial-gradient(circle,rgba(37,99,235,0.1),transparent_60%)] dark:bg-[radial-gradient(circle,rgba(37,99,235,0.04),transparent_60%)]" />
 
       <div className="page-wrap relative">
         {/* Floating cards */}
