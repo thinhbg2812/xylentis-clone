@@ -29,7 +29,7 @@ export default function FAQSection() {
 
           {/* CTA */}
           <motion.div
-            className="mt-8 text-center"
+            className="mt-6 text-center"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
