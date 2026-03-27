@@ -22,7 +22,7 @@ export default function ContactSales() {
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="inline-flex h-12 w-12 items-center justify-center  bg-gradient-to-br from-[var(--brand-600)] to-[var(--brand-500)] text-white shadow-lg shadow-blue-500/25 transition hover:scale-105 hover:shadow-xl"
+        className="inline-flex rounded-full h-12 w-12 items-center justify-center  bg-gradient-to-br from-[var(--brand-600)] to-[var(--brand-500)] text-white shadow-lg shadow-blue-500/25 transition hover:scale-105 hover:shadow-xl"
         aria-label="Contact Sales"
       >
         <MessageCircle className="h-5 w-5" />

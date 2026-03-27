@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { motion } from 'motion/react'
+import { useState } from 'react'
 
 interface FAQItem {
   q: string
@@ -10,39 +11,53 @@ interface FAQProps {
   items: FAQItem[]
 }
 
-function FAQAccordionItem({ item }: { item: FAQItem }) {
+function FAQAccordionItem({ item, index }: { item: FAQItem; index: number }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border-b border-[var(--line)]">
+    <motion.div
+      className="glass-card-hover rounded-xl"
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.2, delay: index * 0.08, ease: 'linear' }}
+    >
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 bg-transparent px-0 py-4 text-left text-sm font-semibold text-[var(--sea-ink)] transition hover:text-[var(--lagoon-deep)]"
+        className="flex w-full items-center justify-between gap-4 bg-transparent px-6 py-5 text-left font-semibold text-[var(--sea-ink)] transition hover:text-[var(--lagoon-deep)]"
       >
-        <span>{item.q}</span>
-        <ChevronDown
-          className={`h-4 w-4 shrink-0 text-[var(--sea-ink-soft)] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-        />
+        <span className="text-base">{item.q}</span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="shrink-0"
+        >
+          <ChevronDown className="h-5 w-5 text-[var(--sea-ink-soft)]" />
+        </motion.span>
       </button>
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      <motion.div
+        initial={false}
+        animate={{
+          height: open ? 'auto' : 0,
+          opacity: open ? 1 : 0,
+        }}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
+        className="overflow-hidden"
       >
-        <div className="overflow-hidden">
-          <p className="pb-4 text-sm leading-relaxed text-[var(--sea-ink-soft)]">
-            {item.a}
-          </p>
-        </div>
-      </div>
-    </div>
+        <p className="px-6 pb-5 text-sm leading-relaxed text-[var(--sea-ink-soft)]">
+          {item.a}
+        </p>
+      </motion.div>
+    </motion.div>
   )
 }
 
 export default function FAQ({ items }: FAQProps) {
   return (
-    <div className="divide-y-0">
+    <div className="space-y-3">
       {items.map((item, idx) => (
-        <FAQAccordionItem key={idx} item={item} />
+        <FAQAccordionItem key={idx} item={item} index={idx} />
       ))}
     </div>
   )

@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next'
 import StatCounter from '../StatCounter'
 
 const partnerLogos = [
-  { name: 'CMC', src: '/assets/logos/cmc.svg', href: 'https://cmctelecom.vn/' },
-  { name: 'FPT', src: '/assets/logos/fpt.svg', href: 'https://fpt.vn/' },
-  { name: 'Long Van', src: '/assets/logos/longvan.png', href: 'https://longvan.net/' },
-  { name: 'GTHost', src: '/assets/logos/gthost.png', href: 'https://gthost.com/' },
-  { name: 'UltaHost', src: '/assets/logos/ultahost.webp', href: 'https://ultahost.com/' },
-  { name: 'CloudHub', src: '/assets/logos/cloudhub.gif', href: 'https://cloudhub.vn/' },
-  { name: 'CloudZone', src: '/assets/logos/cloudzone.png', href: 'https://cloudzone.vn/' },
+  { name: 'CMC', src: 'https://www.cmc.com.vn/main/imgs/logo.svg', href: 'https://cmctelecom.vn/' },
+  { name: 'FPT', src: 'https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg', href: 'https://fpt.vn/' },
+  { name: 'Long Van', src: 'https://longvan.net/uploads/logo_longvancloudsolution_d18caa00d7.png', href: 'https://longvan.net/' },
+  { name: 'GTHost', src: 'https://gthost.com/_next/image?url=%2Fstatic%2Flogo.png&w=384&q=100', href: 'https://gthost.com/' },
+  { name: 'UltaHost', src: 'https://ultahost.com/themes/default/images/logos/logo-light-en.webp', href: 'https://ultahost.com/' },
+  { name: 'CloudHub', src: 'https://cloudhub.vn/wp-content/uploads/2023/11/cloudhub-logo.gif', href: 'https://cloudhub.vn/' },
+  { name: 'CloudZone', src: 'https://cloudzone.vn/images/logo-cloudzone-white.png', href: 'https://cloudzone.vn/' },
 ]
 
 export default function TrustedBySection() {
@@ -28,12 +28,12 @@ export default function TrustedBySection() {
                 href={logo.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-10 items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0"
+                className="inline-flex h-12 items-center opacity-70 transition hover:opacity-100"
               >
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-8 max-w-[120px] object-contain"
+                  className="max-h-10 max-w-[140px] object-contain"
                 />
               </a>
             ))}

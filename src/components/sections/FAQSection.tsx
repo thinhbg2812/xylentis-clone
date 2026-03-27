@@ -1,35 +1,47 @@
+import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
-import { Button } from '../ui/button'
 import FAQ from '../FAQ'
+import { Button } from '../ui/button'
 
 export default function FAQSection() {
   const { t } = useTranslation()
   const faqItems = t('faq.items', { returnObjects: true }) as Array<{ q: string; a: string }>
 
   return (
-    <section className="px-4 py-16">
+    <section className="relative py-32 overflow-hidden px-4">
       <div className="page-wrap">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-8 text-center">
-            <p className="island-kicker mb-2">{t('faq.kicker')}</p>
-            <h2 className="mb-3 text-3xl font-bold text-[var(--sea-ink)] sm:text-4xl">
-              {t('faq.title')}
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <span className="inline-block text-brand-600 dark:text-brand-400 text-sm font-semibold tracking-wider uppercase mb-4">
+              {t('faq.kicker')}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+              {t('faq.titlePrefix', 'Frequently Asked ')}<span className="gradient-text">{t('faq.titleHighlight', 'Questions')}</span>
             </h2>
-            <p className="text-[var(--sea-ink-soft)]">{t('faq.subtitle')}</p>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              {t('faq.subtitle')}
+            </p>
           </div>
 
-          <div className="island-shell rounded-2xl px-6 py-2">
-            <FAQ items={Array.isArray(faqItems) ? faqItems : []} />
-          </div>
+          {/* FAQ accordion — each item is its own card */}
+          <FAQ items={Array.isArray(faqItems) ? faqItems : []} />
 
-          <div className="mt-6 text-center">
-            <p className="mb-3 text-sm text-[var(--sea-ink-soft)]">
+          {/* CTA */}
+          <motion.div
+            className="mt-8 text-center"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.1, ease: 'linear' }}
+          >
+            <p className="mb-4 text-slate-600 dark:text-slate-400">
               {t('faq.stillHaveQuestions')}
             </p>
-            <Button type="button" className="rounded-full px-6">
+            <Button type="button" className="rounded-full px-8 py-3">
               {t('faq.talkToSales')}
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

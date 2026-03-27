@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import i18n from '../i18n'
 import ContactSales from '../components/ContactSales'
 import BannerSection from '../components/sections/BannerSection'
 import ContactSection from '../components/sections/ContactSection'
@@ -9,6 +8,7 @@ import PlatformSection from '../components/sections/PlatformSection'
 import ServicesSection from '../components/sections/ServicesSection'
 import TrustedBySection from '../components/sections/TrustedBySection'
 import WhyUsSection from '../components/sections/WhyUsSection'
+import i18n from '../i18n'
 
 export const Route = createFileRoute('/')({
   beforeLoad: () => {
