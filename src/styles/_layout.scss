@@ -1,0 +1,27 @@
+.page-wrap {
+  width: min(80rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.island-shell {
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--surface-strong), var(--surface));
+  box-shadow:
+    0 1px 0 var(--inset-glint) inset,
+    0 22px 44px rgba(15, 23, 42, 0.06),
+    0 6px 18px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(12px);
+}
+
+.island-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--kicker);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: color-mix(in oklab, var(--header-bg) 84%, transparent 16%);
+}

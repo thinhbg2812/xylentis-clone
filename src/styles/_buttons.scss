@@ -1,0 +1,58 @@
+button,
+.island-shell,
+a {
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease,
+    transform 180ms ease;
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-500) 50%, var(--ocean-500));
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow:
+    0 4px 14px rgba(38, 59, 132, 0.35),
+    0 1px 3px rgba(38, 59, 132, 0.2);
+  transition: all 200ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow:
+    0 6px 22px rgba(38, 59, 132, 0.5),
+    0 2px 8px rgba(58, 109, 245, 0.3);
+  color: white;
+}
+
+/* Secondary button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sea-ink);
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  border-color: var(--lagoon-deep);
+  color: var(--sea-ink);
+}

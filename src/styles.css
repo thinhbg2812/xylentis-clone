@@ -8,7 +8,7 @@
 
 :root {
   /* Brand palette — mirrored from xylentis.com */
-  --brand-50:  #eef2ff;
+  --brand-50: #eef2ff;
   --brand-100: #e0e7ff;
   --brand-200: #c7d7fe;
   --brand-300: #90b8ff;
@@ -21,6 +21,8 @@
   /* Ocean (mid-gradient stop) */
   --ocean-500: #4a7de8;
   --ocean-400: #7aa3f5;
+  /* Neon Cyan */
+  --neon-cyan: #4a90c2;
 
   /* Semantic tokens — Light */
   --sea-ink: #0f172a;
@@ -79,57 +81,57 @@
 }
 
 .dark {
-  --sea-ink: #f1f5f9;
-  --sea-ink-soft: #94a3b8;
-  --lagoon: #7aa3f5;
-  --lagoon-deep: #5c91fa;
-  --palm: #3a6df5;
-  --sand: #0f172a;
-  --foam: #0f172a;
-  --surface: rgba(15, 23, 42, 0.8);
-  --surface-strong: rgba(15, 23, 42, 0.95);
-  --line: rgba(148, 163, 184, 0.15);
-  --inset-glint: rgba(148, 163, 184, 0.1);
-  --kicker: #7aa3f5;
-  --bg-base: #030712;
-  --header-bg: rgba(3, 7, 18, 0.88);
-  --chip-bg: rgba(15, 23, 42, 0.9);
-  --chip-line: rgba(58, 109, 245, 0.2);
-  --link-bg-hover: rgba(30, 41, 59, 0.8);
-  --hero-a: rgba(58, 109, 245, 0.12);
-  --hero-b: rgba(38, 59, 132, 0.08);
+  --sea-ink: #f8fafc;
+  --sea-ink-soft: #b0bec5;
+  --lagoon: #93bbfd;
+  --lagoon-deep: #7aa3f5;
+  --palm: #5c91fa;
+  --sand: #020617;
+  --foam: #020617;
+  --surface: rgba(2, 6, 23, 0.85);
+  --surface-strong: rgba(2, 6, 23, 0.97);
+  --line: rgba(148, 163, 184, 0.12);
+  --inset-glint: rgba(148, 163, 184, 0.06);
+  --kicker: #93bbfd;
+  --bg-base: #020617;
+  --header-bg: rgba(2, 6, 23, 0.92);
+  --chip-bg: rgba(2, 6, 23, 0.95);
+  --chip-line: rgba(58, 109, 245, 0.25);
+  --link-bg-hover: rgba(15, 23, 42, 0.7);
+  --hero-a: rgba(58, 109, 245, 0.08);
+  --hero-b: rgba(38, 59, 132, 0.05);
 
-  --background: oklch(0.141 0.005 285.823);
+  --background: oklch(0.085 0.005 285.823);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
+  --card: oklch(0.1 0.005 285.823);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
+  --popover: oklch(0.1 0.005 285.823);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
+  --primary-foreground: oklch(0.15 0.006 285.885);
+  --secondary: oklch(0.2 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
+  --muted: oklch(0.2 0.006 286.033);
+  --muted-foreground: oklch(0.75 0.015 286.067);
+  --accent: oklch(0.2 0.006 286.033);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
+  --border: oklch(0.22 0.006 286.033);
+  --input: oklch(0.22 0.006 286.033);
   --ring: oklch(0.442 0.017 285.786);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar: oklch(0.12 0.006 285.885);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent: oklch(0.2 0.006 286.033);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
+  --sidebar-border: oklch(0.22 0.006 286.033);
   --sidebar-ring: oklch(0.442 0.017 285.786);
 }
 
@@ -185,6 +187,7 @@
   --color-brand-900: var(--brand-900);
   --color-ocean-500: var(--ocean-500);
   --color-ocean-400: var(--ocean-400);
+  --color-neon-cyan: var(--neon-cyan);
 }
 
 html,
@@ -206,6 +209,15 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode body: pure dark gradient without white mixing */
+.dark body {
+  background:
+    radial-gradient(1100px 620px at -8% -10%, var(--hero-a), transparent 58%),
+    radial-gradient(1050px 620px at 112% -12%, var(--hero-b), transparent 62%),
+    radial-gradient(720px 380px at 50% 115%, rgba(59, 130, 246, 0.03), transparent 68%),
+    linear-gradient(180deg, var(--sand) 0%, var(--foam) 44%, var(--bg-base) 100%);
 }
 
 body::before {
@@ -246,6 +258,15 @@ a:not([data-slot="button"]):hover {
   color: var(--lagoon);
 }
 
+.dark a:not([data-slot="button"]) {
+  color: rgba(148, 163, 184, 1);
+  text-decoration-color: rgba(248, 250, 252, 0.3);
+}
+
+.dark a:not([data-slot="button"]):hover {
+  color: #f8fafc
+}
+
 code {
   font-size: 0.9em;
   border: 1px solid var(--line);
@@ -270,222 +291,11 @@ pre code {
   color: #e2e8f0;
 }
 
-.page-wrap {
-  width: min(1200px, calc(100% - 2rem));
-  margin-inline: auto;
-}
-
-.island-shell {
-  border: 1px solid var(--line);
-  background: linear-gradient(165deg, var(--surface-strong), var(--surface));
-  box-shadow:
-    0 1px 0 var(--inset-glint) inset,
-    0 22px 44px rgba(15, 23, 42, 0.06),
-    0 6px 18px rgba(15, 23, 42, 0.04);
-  backdrop-filter: blur(12px);
-}
-
-.feature-card {
-  background: linear-gradient(165deg, color-mix(in oklab, var(--surface-strong) 93%, white 7%), var(--surface));
-  box-shadow:
-    0 1px 0 var(--inset-glint) inset,
-    0 18px 34px rgba(15, 23, 42, 0.06),
-    0 4px 14px rgba(15, 23, 42, 0.03);
-}
-
-.feature-card:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in oklab, var(--lagoon-deep) 30%, var(--line));
-}
-
-/* Xylentis glass-card-hover replicated from live site */
-.glass-card-hover {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 24px;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.5s;
-}
-
-.dark .glass-card-hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
-}
-
-.glass-card-hover:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  border-color: rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 40px;
-}
-
-.dark .glass-card-hover:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: none;
-}
-
-button,
-.island-shell,
-a {
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease,
-    transform 180ms ease;
-}
-
-.island-kicker {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.75rem;
-  color: var(--kicker);
-}
-
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: var(--sea-ink-soft);
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  background: linear-gradient(90deg, var(--lagoon), var(--lagoon-deep));
-  transition: transform 170ms ease;
-}
-
-.nav-link:hover,
-.nav-link.is-active {
-  color: var(--sea-ink);
-}
-
-.nav-link:hover::after,
-.nav-link.is-active::after {
-  transform: scaleX(1);
-}
-
-.rise-in {
-  animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  background: color-mix(in oklab, var(--header-bg) 84%, transparent 16%);
-}
-
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, var(--brand-600), var(--brand-500) 50%, var(--ocean-500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.dark .gradient-text {
-  background: linear-gradient(135deg, var(--brand-400), var(--ocean-400));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Primary button */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, var(--brand-600), var(--brand-500) 50%, var(--ocean-500));
-  border: none;
-  border-radius: 9999px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow:
-    0 4px 14px rgba(38, 59, 132, 0.35),
-    0 1px 3px rgba(38, 59, 132, 0.2);
-  transition: all 200ms ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.1);
-  box-shadow:
-    0 6px 22px rgba(38, 59, 132, 0.5),
-    0 2px 8px rgba(58, 109, 245, 0.3);
-  color: white;
-}
-
-/* Secondary button */
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--sea-ink);
-  background: var(--surface-strong);
-  border: 1px solid var(--line);
-  border-radius: 9999px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 200ms ease;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-1px);
-  border-color: var(--lagoon-deep);
-  color: var(--sea-ink);
-}
-
-/* Marquee for partner logos */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.logo-marquee-track {
-  animation: scroll-left 30s linear infinite;
-}
-
-.logo-marquee-track:hover {
-  animation-play-state: paused;
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-  }
-}
+/* Component styles — split into SCSS partials */
+@import './styles/_layout.scss';
+@import './styles/_cards.scss';
+@import './styles/_navigation.scss';
+@import './styles/_buttons.scss';
+@import './styles/_animations.scss';
+@import './styles/_utilities.scss';
+@import './styles/_base.scss';

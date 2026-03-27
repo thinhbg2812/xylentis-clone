@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Rocket } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../ui/button'
 
@@ -6,34 +6,55 @@ export default function CTASection() {
   const { t } = useTranslation()
 
   return (
-    <section className="px-4 py-20">
-      <div className="page-wrap">
-        <div className="island-shell relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-12">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-56 w-56  bg-[radial-gradient(circle,rgba(59,130,246,0.2),transparent_60%)]" />
-          <div className="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56  bg-[radial-gradient(circle,rgba(37,99,235,0.15),transparent_60%)]" />
+    <section id="cta" className="relative overflow-hidden px-4 py-24">
+      {/* Background glow effects */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[var(--brand-500)]/5 to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-500)]/10 blur-[120px]" />
 
-          <p className="island-kicker relative mb-3">{t('cta.kicker')}</p>
-          <h2 className="relative mb-4 text-3xl font-bold text-[var(--sea-ink)] sm:text-4xl">
-            {t('cta.title')}
-          </h2>
-          <p className="relative mx-auto mb-8 max-w-2xl text-[var(--sea-ink-soft)]">
-            {t('cta.subtitle')}
-          </p>
-          <div className="relative flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg" className="rounded-full px-6">
-              <a href="https://portal.xylentis.com/" target="_blank" rel="noopener noreferrer">
-                {t('cta.getStarted')}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-6">
-              {t('cta.talkToSales')}
-            </Button>
-          </div>
-          <p className="relative mt-4 text-xs text-[var(--sea-ink-soft)]">
-            {t('cta.note')}
-          </p>
+      <div className="page-wrap relative text-center">
+        {/* Badge */}
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--brand-500)]/20 bg-[var(--brand-500)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand-500)]">
+          <Rocket className="h-3.5 w-3.5" />
+          <span>{t('cta.kicker')}</span>
         </div>
+
+        {/* Title with gradient highlight */}
+        <h2 className="mb-6 text-4xl font-bold tracking-tight text-[var(--sea-ink)] sm:text-5xl md:text-6xl">
+          {t('cta.title').split('Transform').length > 1 ? (
+            <>
+              {t('cta.title').split('Transform')[0]}
+              <span className="bg-gradient-to-r from-[var(--brand-400)] to-[var(--brand-600)] bg-clip-text text-transparent">
+                Transform
+              </span>
+              {t('cta.title').split('Transform')[1]}
+            </>
+          ) : (
+            t('cta.title')
+          )}
+        </h2>
+
+        {/* Subtitle */}
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-[var(--sea-ink-soft)]">
+          {t('cta.subtitle')}
+        </p>
+
+        {/* Action Buttons */}
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button asChild size="xl" variant="default" className="px-10 py-5 text-lg">
+            <a href="https://portal.xylentis.com/" target="_blank" rel="noopener noreferrer">
+              {t('cta.getStarted')}
+              <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
+          <Button size="xl" variant="outline" className="px-10 py-5 text-lg">
+            {t('cta.talkToSales')}
+          </Button>
+        </div>
+
+        {/* Footer note */}
+        <p className="text-sm text-[var(--sea-ink-soft)]">
+          {t('cta.note')}
+        </p>
       </div>
     </section>
   )

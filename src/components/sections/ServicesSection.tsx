@@ -45,7 +45,7 @@ export default function ServicesSection() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.2, delay: idx * 0.2, ease: "linear" }}
+              transition={{ duration: 0.2, delay: idx * 0.1, ease: "linear" }}
             >
               {/* Hover glow layer */}
               <div className={`absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-60 blur-xl transition-opacity duration-500 bg-gradient-to-br ${glow}`} />
