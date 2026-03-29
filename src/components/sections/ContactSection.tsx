@@ -1,6 +1,6 @@
 import { CheckCircle, Clock, Mail, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Button } from '../ui/button'
+import ContactForm from './ContactForm'
 
 export default function ContactSection() {
   const { t } = useTranslation()
@@ -18,76 +18,7 @@ export default function ContactSection() {
 
         <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-5">
           {/* Form */}
-          <div className="island-shell rounded-2xl p-6 lg:col-span-3">
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-sm font-medium text-[var(--sea-ink)]">
-                    {t('contact.fullName')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-sm text-[var(--sea-ink)] outline-none transition focus:border-[var(--lagoon-deep)] focus:ring-2 focus:ring-[var(--brand-500)]/20"
-                    placeholder={t('contact.fullName')}
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm font-medium text-[var(--sea-ink)]">
-                    {t('contact.email')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-sm text-[var(--sea-ink)] outline-none transition focus:border-[var(--lagoon-deep)] focus:ring-2 focus:ring-[var(--brand-500)]/20"
-                    placeholder={t('contact.email')}
-                  />
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-sm font-medium text-[var(--sea-ink)]">
-                    {t('contact.company')}
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-sm text-[var(--sea-ink)] outline-none transition focus:border-[var(--lagoon-deep)] focus:ring-2 focus:ring-[var(--brand-500)]/20"
-                    placeholder={t('contact.company')}
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm font-medium text-[var(--sea-ink)]">
-                    {t('contact.subject')} <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    required
-                    className="w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-sm text-[var(--sea-ink)] outline-none transition focus:border-[var(--lagoon-deep)] focus:ring-2 focus:ring-[var(--brand-500)]/20"
-                  >
-                    <option value="">{t('contact.selectSubject')}</option>
-                    <option>{t('contact.subjects.general')}</option>
-                    <option>{t('contact.subjects.sales')}</option>
-                    <option>{t('contact.subjects.support')}</option>
-                    <option>{t('contact.subjects.partnership')}</option>
-                    <option>{t('contact.subjects.careers')}</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--sea-ink)]">
-                  {t('contact.message')} <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  className="w-full resize-none rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-sm text-[var(--sea-ink)] outline-none transition focus:border-[var(--lagoon-deep)] focus:ring-2 focus:ring-[var(--brand-500)]/20"
-                  placeholder={t('contact.message')}
-                />
-              </div>
-              <Button type="submit" size="lg" className="w-full justify-center rounded-lg">
-                {t('contact.send')}
-              </Button>
-            </form>
-          </div>
+          <ContactForm />
 
           {/* Contact info */}
           <div className="flex flex-col gap-4 lg:col-span-2">

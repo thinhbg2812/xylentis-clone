@@ -195,7 +195,12 @@
     "quickResponse": "Thời gian phản hồi nhanh",
     "quickResponseDesc": "Đội ngũ thường phản hồi trong 2-4 giờ trong giờ làm việc.",
     "teamOnline": "Đội ngũ đang trực tuyến",
-    "followUs": "Theo dõi chúng tôi"
+    "followUs": "Theo dõi chúng tôi",
+    "success": {
+      "title": "🎉 Gửi tin nhắn thành công!",
+      "description": "Cảm ơn bạn đã liên hệ! Đội ngũ sẽ xem xét tin nhắn và phản hồi trong 2-4 giờ làm việc.",
+      "close": "Đã hiểu, cảm ơn!"
+    }
   },
   "cta": {
     "kicker": "Bắt đầu hành trình ngay hôm nay",

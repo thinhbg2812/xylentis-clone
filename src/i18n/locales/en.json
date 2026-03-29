@@ -195,7 +195,12 @@
     "quickResponse": "Quick Response Time",
     "quickResponseDesc": "Our team typically responds within 2-4 hours during business hours.",
     "teamOnline": "Team is online now",
-    "followUs": "Follow Us"
+    "followUs": "Follow Us",
+    "success": {
+      "title": "🎉 Message Sent Successfully!",
+      "description": "Thank you for reaching out! Our team will review your message and get back to you within 2-4 business hours.",
+      "close": "Got it, thanks!"
+    }
   },
   "cta": {
     "kicker": "Start your journey today",
