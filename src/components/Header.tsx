@@ -1,6 +1,18 @@
 import XylentisLogo from '#/icons/XylentisLogo'
-import { ChevronDown, Menu, X } from 'lucide-react'
-import { motion } from 'motion/react'
+import {
+  Building2,
+  ChevronDown,
+  Cloud,
+  CodeXml,
+  HardDrive,
+  Key,
+  Laptop,
+  Menu,
+  Server,
+  Shield,
+  X,
+} from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLanguageStore } from '../stores/language-store'
@@ -16,14 +28,46 @@ import {
   DrawerTitle,
 } from './ui/drawer'
 
-const serviceLinks = [
-  { to: '/services/vps', labelKey: 'Cloud VPS' },
-  { to: '/services/dedicated', labelKey: 'VDS / Dedicated Server' },
-  { to: '/services/colocation', labelKey: 'Colocation' },
-  { to: '/services/anti-ddos', labelKey: 'Anti-DDoS Protection' },
-  { to: '/services/outsource', labelKey: 'Software Outsourcing' },
-  { to: '/services/web-design', labelKey: 'Website/App Design' },
-  { to: '/services/software-license', labelKey: 'Software Licenses' },
+import type { LucideIcon } from 'lucide-react'
+
+interface ServiceLink {
+  to: string
+  labelKey: string
+  icon: LucideIcon
+}
+
+interface ServiceCategory {
+  titleKey: string
+  icon: LucideIcon
+  items: ServiceLink[]
+}
+
+const serviceCategories: ServiceCategory[] = [
+  {
+    titleKey: 'nav.megaMenu.softwareDev',
+    icon: CodeXml,
+    items: [
+      { to: '/services/outsource', labelKey: 'nav.megaMenu.outsourcing', icon: CodeXml },
+      { to: '/services/web-design', labelKey: 'nav.megaMenu.webDesign', icon: Laptop },
+    ],
+  },
+  {
+    titleKey: 'nav.megaMenu.cloudServer',
+    icon: Cloud,
+    items: [
+      { to: '/services/vps', labelKey: 'nav.megaMenu.vps', icon: Server },
+      { to: '/services/dedicated', labelKey: 'nav.megaMenu.dedicated', icon: HardDrive },
+      { to: '/services/colocation', labelKey: 'nav.megaMenu.colocation', icon: Building2 },
+    ],
+  },
+  {
+    titleKey: 'nav.megaMenu.securityUtils',
+    icon: Shield,
+    items: [
+      { to: '/services/anti-ddos', labelKey: 'nav.megaMenu.antiDdos', icon: Shield },
+      { to: '/services/software-license', labelKey: 'nav.megaMenu.licenses', icon: Key },
+    ],
+  },
 ]
 
 export default function Header() {
@@ -55,7 +99,7 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "tween", ease: "linear", duration: 0.3, delay: 0.3 }}
     >
-      <nav className="page-wrap flex items-center justify-between py-3 ">
+      <nav className="page-wrap flex items-center justify-between py-3">
         {/* Logo */}
         <a href={homeHref} className="inline-flex items-center gap-2 text-[var(--sea-ink)] no-underline">
           <XylentisLogo />
@@ -74,21 +118,63 @@ export default function Header() {
               className="nav-link inline-flex items-center gap-1 px-3 py-2"
             >
               {t('nav.services')}
-              <ChevronDown className="h-3.5 w-3.5" />
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
+              />
             </Button>
-            {servicesOpen && (
-              <div className="absolute left-0 top-full z-50 mt-1 w-64 rounded-xl border border-[var(--line)] bg-[var(--surface-strong)] p-2 shadow-xl backdrop-blur-xl">
-                {serviceLinks.map((link) => (
-                  <a
-                    key={link.to}
-                    href={link.to}
-                    className="block rounded-lg px-3 py-2 text-sm text-[var(--sea-ink-soft)] no-underline transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-                  >
-                    {link.labelKey}
-                  </a>
-                ))}
-              </div>
-            )}
+
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  className="absolute -left-20 top-full z-50 pt-2"
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                >
+                  <div className="min-w-[620px] rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 shadow-xl backdrop-blur-xl">
+                    <div className="grid grid-cols-3 gap-6">
+                      {serviceCategories.map((category) => {
+                        const CategoryIcon = category.icon
+                        return (
+                          <div key={category.titleKey} className="space-y-3">
+                            {/* Category header */}
+                            <div className="flex items-center gap-2 border-b border-[var(--line)] pb-2">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--brand-500)]/10">
+                                <CategoryIcon className="h-4 w-4 text-[var(--brand-500)]" />
+                              </div>
+                              <h3 className="text-sm font-semibold text-[var(--sea-ink)]">
+                                {t(category.titleKey)}
+                              </h3>
+                            </div>
+
+                            {/* Category items */}
+                            <div className="space-y-1">
+                              {category.items.map((link) => {
+                                const ItemIcon = link.icon
+                                return (
+                                  <span
+                                    key={link.to}
+                                    className="group/item flex cursor-default items-center gap-2.5 rounded-lg p-2 opacity-60"
+                                  >
+                                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--surface)]">
+                                      <ItemIcon className="h-3.5 w-3.5 text-[var(--sea-ink-soft)]" />
+                                    </div>
+                                    <span className="text-xs font-medium text-[var(--sea-ink-soft)]">
+                                      {t(link.labelKey)}
+                                    </span>
+                                  </span>
+                                )
+                              })}
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <a href="#why-us" className="nav-link px-3 py-2">
@@ -100,9 +186,9 @@ export default function Header() {
           <a href={aboutHref} className="nav-link px-3 py-2">
             {t('nav.about')}
           </a>
-          <a href="/blog" className="nav-link px-3 py-2">
+          {/* <a href="/blog" className="nav-link px-3 py-2">
             {t('nav.blog')}
-          </a>
+          </a> */}
           <a href="/legal" className="nav-link px-3 py-2">
             {t('nav.legal')}
           </a>

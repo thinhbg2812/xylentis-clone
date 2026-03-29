@@ -7,7 +7,19 @@
     "blog": "Blog",
     "legal": "Pháp lý",
     "getStarted": "Bắt đầu",
-    "toggleTheme": "Chuyển giao diện"
+    "toggleTheme": "Chuyển giao diện",
+    "megaMenu": {
+      "softwareDev": "Phát triển phần mềm",
+      "cloudServer": "Cloud & Máy chủ",
+      "securityUtils": "Bảo mật & Tiện ích",
+      "outsourcing": "Gia công phần mềm",
+      "webDesign": "Thiết kế Web/App",
+      "vps": "Cloud VPS",
+      "dedicated": "VDS / Máy chủ riêng",
+      "colocation": "Colocation",
+      "antiDdos": "Chống DDoS",
+      "licenses": "Bản quyền phần mềm"
+    }
   },
   "hero": {
     "badge": "✨ Tương lai trên Đám mây",
@@ -240,5 +252,90 @@
     "copyright": "© 2026 Xylentis. Đã đăng ký bản quyền.",
     "sitemap": "Sơ đồ trang",
     "allSystems": "Tất cả hệ thống hoạt động bình thường"
+  },
+  "aboutPage": {
+    "kicker": "VỀ CHÚNG TÔI",
+    "hero": {
+      "title": "Xây dựng tương lai số",
+      "subtitle": "Chúng tôi là đội ngũ công nghệ đam mê, cống hiến để cung cấp hạ tầng đám mây và giải pháp số đẳng cấp thế giới.",
+      "founded": "Thành lập vào tháng 12 năm 2025, Xylentis là công ty công nghệ trẻ nhưng đầy tham vọng. Sứ mệnh của chúng tôi là trao quyền cho các tổ chức bằng hạ tầng công nghệ đáng tin cậy, có khả năng mở rộng và bảo mật.",
+      "cta1": "Yêu cầu tư vấn",
+      "cta2": "Xem dịch vụ"
+    },
+    "story": {
+      "kicker": "CÂU CHUYỆN",
+      "title": "Câu chuyện của chúng tôi",
+      "p1": "Xylentis ra đời từ một tầm nhìn đơn giản: làm cho hạ tầng đám mây cấp doanh nghiệp trở nên dễ tiếp cận với mọi quy mô doanh nghiệp. Chúng tôi là đội ngũ trẻ đam mê đám mây, sẵn sàng trở thành nhà cung cấp giải pháp công nghệ toàn diện.",
+      "p2": "Chúng tôi tin rằng mọi doanh nghiệp đều xứng đáng được tiếp cận hạ tầng đáng tin cậy, hiệu suất cao mà không phải chịu sự phức tạp và chi phí truyền thống của giải pháp doanh nghiệp. Niềm tin này là động lực cho mọi việc chúng tôi làm.",
+      "p3": "Chúng tôi cam kết phục vụ khách hàng từ startup sáng tạo đến doanh nghiệp lâu đời, cung cấp công cụ và hỗ trợ cần thiết để thành công trong thời đại số."
+    },
+    "mission": {
+      "title": "Sứ mệnh",
+      "desc": "Trao quyền cho doanh nghiệp bằng hạ tầng công nghệ đáng tin cậy, có khả năng mở rộng, thúc đẩy tăng trưởng và đổi mới."
+    },
+    "values": {
+      "kicker": "GIÁ TRỊ CỐT LÕI",
+      "title": "Giá trị cốt lõi",
+      "subtitle": "Các nguyên tắc hướng dẫn mọi việc chúng tôi làm",
+      "items": {
+        "excellence": {
+          "title": "Xuất sắc",
+          "desc": "Chúng tôi phấn đấu cho sự xuất sắc trong mọi dịch vụ, không bao giờ chấp nhận sự tầm thường."
+        },
+        "passion": {
+          "title": "Đam mê",
+          "desc": "Đam mê công nghệ thúc đẩy chúng tôi không ngừng đổi mới và cải thiện."
+        },
+        "teamwork": {
+          "title": "Tinh thần đồng đội",
+          "desc": "Chúng tôi tin vào sức mạnh hợp tác để đạt được kết quả phi thường."
+        },
+        "innovation": {
+          "title": "Đổi mới",
+          "desc": "Chúng tôi đón nhận công nghệ và cách tiếp cận mới để cung cấp giải pháp tiên tiến."
+        }
+      }
+    },
+    "journey": {
+      "kicker": "HÀNH TRÌNH",
+      "title": "Hành trình của chúng tôi",
+      "subtitle": "Các cột mốc quan trọng trong quá trình phát triển",
+      "items": {
+        "founded": {
+          "title": "Thành lập công ty",
+          "desc": "Xylentis chính thức thành lập ngày 3 tháng 12 năm 2025 với tầm nhìn dân chủ hóa hạ tầng đám mây."
+        },
+        "firstServer": {
+          "title": "Máy chủ đầu tiên hoạt động",
+          "desc": "Máy chủ đầu tiên của chúng tôi đi vào hoạt động ngày 31 tháng 12 năm 2025, đánh dấu khởi đầu hành trình hạ tầng."
+        }
+      }
+    },
+    "vision": {
+      "kicker": "TẦM NHÌN",
+      "title": "Tầm nhìn",
+      "subtitle": "Hướng chúng tôi đang đi và động lực thúc đẩy",
+      "items": {
+        "regionalExpansion": {
+          "title": "Mở rộng khu vực",
+          "desc": "Trở thành nhà cung cấp hạ tầng đám mây hàng đầu tại Đông Nam Á."
+        },
+        "sustainableGrowth": {
+          "title": "Tăng trưởng bền vững",
+          "desc": "Xây dựng quan hệ lâu dài với khách hàng thông qua chất lượng và độ tin cậy."
+        },
+        "trustedPartner": {
+          "title": "Đối tác tin cậy",
+          "desc": "Trở thành đối tác công nghệ hàng đầu cho doanh nghiệp mọi quy mô."
+        }
+      }
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "subtitle": "Chúng tôi rất muốn nghe từ bạn. Liên hệ bất cứ lúc nào.",
+      "address": "TP. Hồ Chí Minh, Việt Nam",
+      "email": "contact@xylentis.com",
+      "cta": "Liên hệ ngay"
+    }
   }
 }

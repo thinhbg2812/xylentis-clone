@@ -7,7 +7,19 @@
     "blog": "Blog",
     "legal": "Legal",
     "getStarted": "Get Started",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "megaMenu": {
+      "softwareDev": "Software Development",
+      "cloudServer": "Cloud & Server",
+      "securityUtils": "Security & Utilities",
+      "outsourcing": "Software Outsourcing",
+      "webDesign": "Website/App Design",
+      "vps": "Cloud VPS",
+      "dedicated": "VDS / Dedicated Server",
+      "colocation": "Colocation",
+      "antiDdos": "Anti-DDoS Protection",
+      "licenses": "Software Licenses"
+    }
   },
   "hero": {
     "badge": "✨ Future on Cloud",
@@ -240,5 +252,90 @@
     "copyright": "© 2026 Xylentis. All rights reserved.",
     "sitemap": "Sitemap",
     "allSystems": "All systems operational"
+  },
+  "aboutPage": {
+    "kicker": "ABOUT US",
+    "hero": {
+      "title": "Building the Digital Future",
+      "subtitle": "We're a team of passionate technologists dedicated to delivering world-class cloud infrastructure and digital solutions.",
+      "founded": "Founded in December 2025, Xylentis is a young but ambitious technology company. Our mission is to empower organizations with reliable, scalable, and secure technology infrastructure.",
+      "cta1": "Request Consultation",
+      "cta2": "View Our Services"
+    },
+    "story": {
+      "kicker": "OUR STORY",
+      "title": "Our Story",
+      "p1": "Xylentis was born from a simple vision: to make enterprise-grade cloud infrastructure accessible to businesses of all sizes. We are a young team of passionate cloud enthusiasts ready to become a comprehensive technology solutions provider.",
+      "p2": "We believe that every business deserves access to reliable, high-performance infrastructure without the complexity and cost traditionally associated with enterprise solutions. This belief drives everything we do.",
+      "p3": "We are committed to serving clients ranging from innovative startups to established enterprises, providing them with the tools and support they need to succeed in the digital age."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "Empowering businesses with reliable, scalable technology infrastructure that drives growth and innovation."
+    },
+    "values": {
+      "kicker": "OUR VALUES",
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide everything we do",
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "desc": "We strive for excellence in every service we deliver, never settling for mediocrity."
+        },
+        "passion": {
+          "title": "Passion",
+          "desc": "Our passion for technology drives us to continuously innovate and improve."
+        },
+        "teamwork": {
+          "title": "Teamwork",
+          "desc": "We believe in the power of collaboration to achieve extraordinary results."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "desc": "We embrace new technologies and approaches to deliver cutting-edge solutions."
+        }
+      }
+    },
+    "journey": {
+      "kicker": "OUR JOURNEY",
+      "title": "Our Journey",
+      "subtitle": "Key milestones in our growth and evolution",
+      "items": {
+        "founded": {
+          "title": "Company Founded",
+          "desc": "Xylentis was officially established on December 3rd, 2025 with a vision to democratize cloud infrastructure."
+        },
+        "firstServer": {
+          "title": "First Server Online",
+          "desc": "Our first server went live on December 31st, 2025, marking the beginning of our infrastructure journey."
+        }
+      }
+    },
+    "vision": {
+      "kicker": "OUR VISION",
+      "title": "Our Vision",
+      "subtitle": "Where we're heading and what drives us forward",
+      "items": {
+        "regionalExpansion": {
+          "title": "Regional Expansion",
+          "desc": "Becoming a leading cloud infrastructure provider in Southeast Asia."
+        },
+        "sustainableGrowth": {
+          "title": "Sustainable Growth",
+          "desc": "Building long-term relationships with clients through quality and reliability."
+        },
+        "trustedPartner": {
+          "title": "Trusted Partner",
+          "desc": "Being the go-to technology partner for businesses of all sizes."
+        }
+      }
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "subtitle": "We'd love to hear from you. Reach out to us anytime.",
+      "address": "Ho Chi Minh City, Vietnam",
+      "email": "contact@xylentis.com",
+      "cta": "Contact Us"
+    }
   }
 }
