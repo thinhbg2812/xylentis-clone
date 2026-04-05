@@ -7,7 +7,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="px-4 py-16">
-      <div className="page-wrap">
+      <div className="page-wrap mx-auto max-w-[80rem]">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="island-kicker mb-2">{t('contact.kicker')}</p>
           <h2 className="mb-3 text-3xl font-bold text-[var(--sea-ink)] sm:text-4xl">

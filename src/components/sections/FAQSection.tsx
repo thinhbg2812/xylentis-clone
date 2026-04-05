@@ -9,7 +9,7 @@ export default function FAQSection() {
 
   return (
     <section className="relative py-32 overflow-hidden px-4">
-      <div className="page-wrap">
+      <div className="page-wrap mx-auto max-w-[80rem]">
         <div className="mx-auto max-w-3xl">
           {/* Heading */}
           <div className="text-center mb-12">

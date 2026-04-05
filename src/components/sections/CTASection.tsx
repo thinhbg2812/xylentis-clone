@@ -11,7 +11,7 @@ export default function CTASection() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[var(--brand-500)]/5 to-transparent" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-500)]/10 blur-[120px]" />
 
-      <div className="page-wrap relative text-center">
+      <div className="page-wrap relative mx-auto max-w-[80rem] text-center">
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--brand-500)]/20 bg-[var(--brand-500)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand-500)]">
           <Rocket className="h-3.5 w-3.5" />

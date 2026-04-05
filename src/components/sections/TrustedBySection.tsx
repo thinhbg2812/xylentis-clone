@@ -16,7 +16,7 @@ export default function TrustedBySection() {
 
   return (
     <section className="px-4 py-16">
-      <div className="page-wrap">
+      <div className="page-wrap mx-auto max-w-[80rem]">
         <p className="island-kicker mb-8 text-center">{t('trusted.kicker')}</p>
 
         {/* Logo marquee */}

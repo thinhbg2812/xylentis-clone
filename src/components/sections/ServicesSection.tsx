@@ -22,7 +22,7 @@ export default function ServicesSection() {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/50 dark:via-[#020617]/80 to-transparent" />
 
-      <div className="page-wrap relative z-10">
+      <div className="page-wrap relative z-10 mx-auto max-w-[80rem]">
         {/* Heading */}
         <div className="text-center mb-16">
           <span className="inline-block text-brand-600 dark:text-cyan-400 text-sm font-semibold tracking-wider uppercase mb-4">

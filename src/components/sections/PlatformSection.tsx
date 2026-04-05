@@ -30,7 +30,7 @@ export default function PlatformSection() {
       {/* Background overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 dark:from-slate-950/50 via-transparent to-slate-50/50 dark:to-slate-950/50" />
 
-      <div className="page-wrap relative z-10">
+      <div className="page-wrap relative z-10 mx-auto max-w-[80rem]">
         {/* Heading */}
         <div className="text-center mb-16">
           <span className="inline-block text-brand-600 dark:text-brand-400 text-sm font-semibold tracking-wider uppercase mb-4">

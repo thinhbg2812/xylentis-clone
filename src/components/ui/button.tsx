@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[linear-gradient(135deg,#263b84,#3a6df5_50%,#4a7de8)] text-white shadow-[0_4px_14px_rgba(38,59,132,0.35)] hover:brightness-110 hover:shadow-[0_6px_22px_rgba(38,59,132,0.5)]",
+          "btn-default-overlay bg-[linear-gradient(135deg,#263b84,#3a6df5_50%,#4a7de8)] text-white shadow-[0_4px_14px_rgba(38,59,132,0.35)] transition-all duration-[300] hover:-translate-y-0.5 hover:brightness-125 hover:shadow-[0_20px_40px_-15px_rgba(38,59,132,.5)]",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border bg-background shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:bg-[rgb(248,250,252)] hover:border-[rgb(148,163,184)] hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost:
@@ -22,11 +22,11 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-9 px-6 py-2 has-[>svg]:px-6",
         xs: "h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        xl: "h-14 rounded-md px-8 py-4 text-base has-[>svg]:px-6",
+        xl: "h-14 rounded-md px-8 py-4 text-base has-[>svg]:px-8.5",
         icon: "size-9",
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",

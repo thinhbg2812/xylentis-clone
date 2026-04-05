@@ -86,7 +86,7 @@ export default function WhyUsSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-500/5 dark:bg-brand-600/5 rounded-full blur-3xl" />
       </div> */}
 
-      <div className="page-wrap relative z-10">
+      <div className="page-wrap relative z-10 mx-auto max-w-[80rem]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text + Feature list */}
           <div>

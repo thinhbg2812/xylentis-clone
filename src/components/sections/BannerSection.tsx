@@ -16,7 +16,7 @@ export default function BannerSection() {
       <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96  bg-[radial-gradient(circle,rgba(59,130,246,0.15),transparent_60%)] dark:bg-[radial-gradient(circle,rgba(59,130,246,0.06),transparent_60%)]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96  bg-[radial-gradient(circle,rgba(37,99,235,0.1),transparent_60%)] dark:bg-[radial-gradient(circle,rgba(37,99,235,0.04),transparent_60%)]" />
 
-      <div className="page-wrap relative">
+      <div className="page-wrap relative mx-auto max-w-[80rem]">
         {/* Floating cards */}
         <motion.div
           className="absolute -left-4 top-4 hidden lg:block"
@@ -111,13 +111,13 @@ export default function BannerSection() {
             />
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3" >
-            <Button asChild size="xl" variant="default" className="px-5 py-2.5">
+            <Button asChild size="xl" variant="default" className="group">
               <a href="https://portal.xylentis.com/" target="_blank" rel="noopener noreferrer">
                 {t('hero.cta')}
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button size="xl" variant="outline" className="px-5 py-2.5">
+            <Button size="xl" variant="outline" className="px-8 py-2.5">
               {t('hero.consultation')}
             </Button>
           </div>
