@@ -1,5 +1,6 @@
 import { Send } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Button } from './ui/button'
 
 const XylentisLogo = () => (
   <svg viewBox="0 0 40 40" className="h-8 w-8" aria-hidden="true">
@@ -62,25 +63,27 @@ export default function Footer() {
             >
               contact@xylentis.com
             </a>
-            <div className="mt-4 flex gap-2">
-              <a
-                href="https://www.facebook.com/vnxylentis"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-                aria-label="Facebook"
-              >
-                <FacebookIcon className="h-4 w-4" />
-              </a>
-              <a
-                href="https://t.me/xylentis"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-                aria-label="Telegram"
-              >
-                <Send className="h-4 w-4" />
-              </a>
+            <div className="mt-4 flex items-center justify-left gap-2">
+              <Button asChild variant="logo" size="icon" >
+                <a
+                  href="https://www.facebook.com/vnxylentis"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="logo" size="icon" >
+                <a
+                  href="https://t.me/xylentis"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Telegram"
+                >
+                  <Send className="h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
 
